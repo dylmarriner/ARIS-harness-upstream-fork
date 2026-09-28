@@ -3,6 +3,7 @@
 - **Repository:** `dylmarriner/ARIS-harness`
 - **Role:** Persistent cognitive runtime and integration harness for ARIS
 - **Cross-repo authority:** `dylmarriner/ARIS/docs/ARIS_MASTER_TECHNICAL_BLUEPRINT.md`
+- **Placement guide:** [ARIS system map: what goes where](ARIS_SYSTEM_MAP.md)
 - **Sibling repositories:** `dylmarriner/ARIS` (ARIS OS: eventd, modeld, system executor, memory gateway) and `dylmarriner/ARIS-intelligence` (native model, served through llama.cpp)
 - **Status as of 2026-09-24:** see [§23 Cross-repository integration contracts](#23-cross-repository-integration-contracts) and [§24 Phased roadmap and status](#24-phased-roadmap-and-status)
 

@@ -131,7 +131,12 @@ jobs:
   # persistent pnpm store and tool caches make them redundant (and saving here
   # would poison the hosted cache namespace with self-hosted paths).
   serial-linux-selfhosted:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    # The in-house self-hosted pool was retired on 2026-09-30. This lane only
+    # runs when a pool is registered again AND DSH_CI_FAILOVER_LINUX selects it;
+    # otherwise it would sit queued forever on a label nothing satisfies.
+    if: >-
+      vars.DSH_CI_FAILOVER_LINUX == 'selfhosted'
+      && github.event_name == 'push' && github.ref == 'refs/heads/master'
     name: serial / linux (self-hosted standby)
     runs-on: [self-hosted, linux, x64, vm-backup]
     steps:
@@ -225,7 +230,10 @@ jobs:
   # (and saving here would poison the hosted cache namespace with self-hosted
   # paths).
   serial-windows:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    # See serial-linux-selfhosted: pool-only lane, skipped without a pool.
+    if: >-
+      vars.DSH_CI_FAILOVER_WINDOWS == 'selfhosted'
+      && github.event_name == 'push' && github.ref == 'refs/heads/master'
     name: serial / windows (self-hosted standby)
     runs-on: [self-hosted, dsh-win-ci, windows]
     timeout-minutes: 120
@@ -280,7 +288,11 @@ jobs:
   # Manual, bounded comparison of the actual critical Linux and Windows lanes.
   # The named pools are restricted at the organization level to this repository.
   larger-runner-benchmark:
-    if: github.event_name == 'workflow_dispatch' && inputs.suite == 'larger-runner-benchmark'
+    # Fleet-tier benchmark: the aris-ubuntu-24-04-*core labels only exist in the
+    # canonical repository's runner fleet, so the fork skips it instead of queueing.
+    if: >-
+      github.event_name == 'workflow_dispatch' && inputs.suite == 'larger-runner-benchmark'
+      && github.repository == 'aris-harness/aris-harness'
     # Default measures the repository's own fleet tiers; under the matching
     # platform's blacksmith failover value the tiers Blacksmith offers (up to
     # 32 vCPU) move onto their Blacksmith equivalents, while the 64/96-core
@@ -391,7 +403,10 @@ jobs:
   # complete unsharded primary aggregate with bounded in-runner parallelism;
   # Windows runs both blocking build targets concurrently through run-gates.
   consolidated-runner-benchmark:
-    if: github.event_name == 'workflow_dispatch' && inputs.suite == 'consolidated-runner-benchmark'
+    # See larger-runner-benchmark: canonical-fleet labels only.
+    if: >-
+      github.event_name == 'workflow_dispatch' && inputs.suite == 'consolidated-runner-benchmark'
+      && github.repository == 'aris-harness/aris-harness'
     # Default measures the repository's own fleet tiers; under the matching
     # platform's blacksmith failover value the tiers Blacksmith offers (up to
     # 32 vCPU) move onto their Blacksmith equivalents, while the 64/96-core

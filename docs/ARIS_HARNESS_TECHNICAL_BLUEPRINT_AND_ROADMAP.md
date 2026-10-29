@@ -744,3 +744,7 @@ This is the first proof that Harness is a cognitive runtime rather than a chat f
 ## 28. Definition of success
 
 This repository succeeds when ARIS can continuously understand relevant state, form and manage goals, reason through replaceable intelligence, safely invoke capabilities, verify effects, recover interrupted work, learn validated procedures and extend across machines without any model or agent becoming the system authority.
+
+## Evolution Engine research integration (proposed, 29 October 2026)
+
+The [Harness Evolution Engine runtime contract](ARIS_EVOLUTION_ENGINE_HARNESS_CONTRACT.md) connects this blueprint to the canonical [ARIS-EE-BP-001 technical specification](https://github.com/dylmarriner/ARIS/blob/main/docs/evolution/ARIS_EVOLUTION_ENGINE_TECHNICAL_BLUEPRINT_AND_ROADMAP.md). Harness owns trace-linked failure mining, candidate manifests, model/tool/agent evolution orchestration and owner review presentation; it does not acquire independent privileged execution or consent-grant authority. Start from protected evaluator/SCOS evidence and two-stage TEST versus DEPLOY review before enabling full code/workflow evolution. EE-P0..EE-P9 is a separate cross-repository workstream. Research methods and benchmark results are not evidence that the current Harness code implements these capabilities.

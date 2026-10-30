@@ -74,3 +74,7 @@ Existing **H0–H3**: source inventory, durable runtime and evidence. **H4–H5*
 ## Source provenance
 
 General concepts learned from [GEPA](https://github.com/gepa-ai/gepa), [DSPy](https://github.com/stanfordnlp/dspy), [Darwinian Evolver](https://github.com/imbue-ai/darwinian_evolver), [Hermes Self-Evolution](https://github.com/NousResearch/hermes-agent-self-evolution), [Atropos](https://github.com/NousResearch/atropos) and [Axolotl](https://github.com/axolotl-ai-cloud/axolotl). None of their implementation source is copied into this document or made a required runtime dependency.
+
+## Strict reference-only implementation rule (2026-10-31)
+
+[ARIS ADR 0012](https://github.com/dylmarriner/ARIS/blob/main/docs/adr/0012-first-party-evolution-and-training-ownership.md) specifies that GEPA, DSPy, Darwinian Evolver and Hermes Self-Evolution repositories are for **study only**. Harness's reflection/search operators, candidate representation, optimizer, population archive, evaluator adapters and tests must be independently authored. **No copying, translating, porting, forking, vendoring or importing their code**, irrespective of license. Do not depend on these frameworks for development, tests, training or ARIS runtime. Existing DeepSeek-derived code must be inventoried and replaced through tested incremental migrations rather than simply relabeled. The first-party implementation is not yet proven by this document.

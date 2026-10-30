@@ -752,3 +752,7 @@ The [Harness Evolution Engine runtime contract](ARIS_EVOLUTION_ENGINE_HARNESS_CO
 ## First-party optimizer and code-sovereignty plan (2026-10-31)
 
 The [Harness-owned evolutionary search implementation plan](ARIS_FIRST_PARTY_EVOLUTION_ENGINE_ROADMAP.md) and [canonical ARIS research-adoption blueprint](https://github.com/dylmarriner/ARIS/blob/main/docs/evolution/FIRST_PARTY_EVOLUTION_TRAINING_BLUEPRINT.md) extend H0–H9 with explicit first-party candidate/trace/Pareto/mutation components, trace-linked failure cases, protected evaluation, diverse model benchmarks and native rollback. GEPA, DSPy, Darwinian Evolver and Hermes Self-Evolution are research references only, never ARIS runtime dependencies. The fork's existing upstream-derived code must be audited for license, maintenance burden and eventual ARIS ownership; renaming it does not make it self-maintained. No H phase is completed merely by adding the plan.
+
+## Research references are not code sources (2026-10-31)
+
+The [first-party Harness evolution workplan](ARIS_FIRST_PARTY_EVOLUTION_ENGINE_ROADMAP.md) requires all new ARIS-specific evolutionary code and tests to be independently authored. GEPA/DSPy/Darwinian/Hermes reference repositories are not source-transplant or package dependencies. Keep inherited source inventory and migration evidence honest; all existing H0–H9 gates remain.

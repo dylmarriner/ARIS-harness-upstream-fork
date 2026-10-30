@@ -42,3 +42,7 @@ ARIS Harness owns the persistent Executive, model-agnostic adapter dispatch, too
 ## Compatibility
 
 The ARIS-specific contract should be implemented in owned packages/plugins and verified in EE-P0; it must not claim existing upstream facilities meet unimplemented privacy, authorization or deployment guarantees. Existing [ARIS Harness technical blueprint](ARIS_HARNESS_TECHNICAL_BLUEPRINT_AND_ROADMAP.md) and canonical system map continue to govern placement. This change is documentation-only.
+
+## First-party realization and trainer separation (2026-10-31)
+
+See [ARIS Harness owned optimizer design](ARIS_FIRST_PARTY_EVOLUTION_ENGINE_ROADMAP.md) and [canonical training/evolution blueprint](https://github.com/dylmarriner/ARIS/blob/main/docs/evolution/FIRST_PARTY_EVOLUTION_TRAINING_BLUEPRINT.md). Implement search strategies as native Harness components while SCOS supplies evidence, Intelligence owns offline model training and ARIS OS maintains the independent evaluator/owner grant verifier. Source code from AGPL-licensed Darwinian Evolver is not to be copied without separate legal authorization; other source transplants likewise require recorded license/provenance/security maintenance. No third-party research framework becomes an OS runtime requirement.
